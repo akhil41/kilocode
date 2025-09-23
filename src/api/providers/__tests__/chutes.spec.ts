@@ -462,8 +462,8 @@ describe("ChutesHandler", () => {
 		expect(model.id).toBe(testModelId)
 		expect(model.info).toEqual(
 			expect.objectContaining({
-				maxTokens: 32768,
-				contextWindow: 163840,
+				maxTokens: 65536,
+				contextWindow: 131100,
 				supportsImages: false,
 				supportsPromptCache: false,
 				inputPrice: 0,
@@ -484,13 +484,13 @@ describe("ChutesHandler", () => {
 		expect(model.id).toBe(testModelId)
 		expect(model.info).toEqual(
 			expect.objectContaining({
-				maxTokens: 65536,
-				contextWindow: 65536,
+				maxTokens: 32768,
+				contextWindow: 131072,
 				supportsImages: true,
 				supportsPromptCache: false,
 				inputPrice: 0,
 				outputPrice: 0,
-				description: "GLM-4.5V multimodal model with 65.5K context window and image support.",
+				description: "GLM-4.5V multimodal model with vision capabilities and 128K context window.",
 				temperature: 0.5,
 			}),
 		)

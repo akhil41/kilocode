@@ -335,8 +335,8 @@ export const chutesModels = {
 	},
 	// kilocode_change start
 	"deepseek-ai/DeepSeek-V3.1-Terminus": {
-		maxTokens: 32768,
-		contextWindow: 163840,
+		maxTokens: 65536,
+		contextWindow: 131100,
 		supportsImages: false,
 		supportsPromptCache: false,
 		inputPrice: 0,
@@ -344,13 +344,13 @@ export const chutesModels = {
 		description: "DeepSeek V3.1 Terminus reasoning model with enhanced reasoning capabilities.",
 	},
 	"zai-org/GLM-4.5V": {
-		maxTokens: 65536,
-		contextWindow: 65536,
+		maxTokens: 32768,
+		contextWindow: 131072,
 		supportsImages: true,
 		supportsPromptCache: false,
 		inputPrice: 0,
 		outputPrice: 0,
-		description: "GLM-4.5V multimodal model with 65.5K context window and image support.",
+		description: "GLM-4.5V multimodal model with vision capabilities and 128K context window.",
 	},
 	"zai-org/GLM-4.5-turbo": {
 		maxTokens: 98304,
