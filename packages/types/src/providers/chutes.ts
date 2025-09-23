@@ -34,6 +34,9 @@ export type ChutesModelId =
 	| "Qwen/Qwen3-235B-A22B-Thinking-2507"
 	| "Qwen/Qwen3-Next-80B-A3B-Instruct"
 	| "Qwen/Qwen3-Next-80B-A3B-Thinking"
+	| "deepseek-ai/DeepSeek-V3.1-Terminus" // kilocode_change
+	| "zai-org/GLM-4.5V" // kilocode_change
+	| "zai-org/GLM-4.5-turbo" // kilocode_change
 
 export const chutesDefaultModelId: ChutesModelId = "deepseek-ai/DeepSeek-R1-0528"
 
@@ -330,4 +333,33 @@ export const chutesModels = {
 		description:
 			"Reasoning-first model with structured thinking traces for multi-step problems, math proofs, and code synthesis.",
 	},
+	// kilocode_change start
+	"deepseek-ai/DeepSeek-V3.1-Terminus": {
+		maxTokens: 32768,
+		contextWindow: 163840,
+		supportsImages: false,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description: "DeepSeek V3.1 Terminus reasoning model with enhanced reasoning capabilities.",
+	},
+	"zai-org/GLM-4.5V": {
+		maxTokens: 65536,
+		contextWindow: 65536,
+		supportsImages: true,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description: "GLM-4.5V multimodal model with 65.5K context window and image support.",
+	},
+	"zai-org/GLM-4.5-turbo": {
+		maxTokens: 98304,
+		contextWindow: 131072,
+		supportsImages: false,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description: "GLM-4.5 Turbo model with enhanced performance and 128K context window.",
+	},
+	// kilocode_change end
 } as const satisfies Record<string, ModelInfo>

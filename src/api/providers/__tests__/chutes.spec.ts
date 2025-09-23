@@ -451,6 +451,74 @@ describe("ChutesHandler", () => {
 		)
 	})
 
+	// kilocode_change start
+	it("should return deepseek-ai/DeepSeek-V3.1-Terminus model with correct configuration", () => {
+		const testModelId: ChutesModelId = "deepseek-ai/DeepSeek-V3.1-Terminus"
+		const handlerWithModel = new ChutesHandler({
+			apiModelId: testModelId,
+			chutesApiKey: "test-chutes-api-key",
+		})
+		const model = handlerWithModel.getModel()
+		expect(model.id).toBe(testModelId)
+		expect(model.info).toEqual(
+			expect.objectContaining({
+				maxTokens: 32768,
+				contextWindow: 163840,
+				supportsImages: false,
+				supportsPromptCache: false,
+				inputPrice: 0,
+				outputPrice: 0,
+				description: "DeepSeek V3.1 Terminus reasoning model with enhanced reasoning capabilities.",
+				temperature: 0.5, // Non-R1 DeepSeek models use default temperature
+			}),
+		)
+	})
+
+	it("should return zai-org/GLM-4.5V model with correct configuration", () => {
+		const testModelId: ChutesModelId = "zai-org/GLM-4.5V"
+		const handlerWithModel = new ChutesHandler({
+			apiModelId: testModelId,
+			chutesApiKey: "test-chutes-api-key",
+		})
+		const model = handlerWithModel.getModel()
+		expect(model.id).toBe(testModelId)
+		expect(model.info).toEqual(
+			expect.objectContaining({
+				maxTokens: 65536,
+				contextWindow: 65536,
+				supportsImages: true,
+				supportsPromptCache: false,
+				inputPrice: 0,
+				outputPrice: 0,
+				description: "GLM-4.5V multimodal model with 65.5K context window and image support.",
+				temperature: 0.5,
+			}),
+		)
+	})
+
+	it("should return zai-org/GLM-4.5-turbo model with correct configuration", () => {
+		const testModelId: ChutesModelId = "zai-org/GLM-4.5-turbo"
+		const handlerWithModel = new ChutesHandler({
+			apiModelId: testModelId,
+			chutesApiKey: "test-chutes-api-key",
+		})
+		const model = handlerWithModel.getModel()
+		expect(model.id).toBe(testModelId)
+		expect(model.info).toEqual(
+			expect.objectContaining({
+				maxTokens: 98304,
+				contextWindow: 131072,
+				supportsImages: false,
+				supportsPromptCache: false,
+				inputPrice: 0,
+				outputPrice: 0,
+				description: "GLM-4.5 Turbo model with enhanced performance and 128K context window.",
+				temperature: 0.5,
+			}),
+		)
+	})
+	// kilocode_change end
+
 	it("should apply DeepSeek default temperature for R1 models", () => {
 		const testModelId: ChutesModelId = "deepseek-ai/DeepSeek-R1"
 		const handlerWithModel = new ChutesHandler({
