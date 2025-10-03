@@ -36,6 +36,7 @@ export type ChutesModelId =
 	| "zai-org/GLM-4.6-FP8"
 	| "zai-org/GLM-4.5V"
 	| "zai-org/GLM-4.5-turbo"
+	| "zai-org/GLM-4.6-turbo" // kilocode_change
 	| "moonshotai/Kimi-K2-Instruct-75k"
 	| "moonshotai/Kimi-K2-Instruct-0905"
 	| "moonshotai/Kimi-Dev-72B"
@@ -329,6 +330,7 @@ export const chutesModels = {
 		description:
 			"GLM-4.6 introduces major upgrades over GLM-4.5, including a longer 200K-token context window for complex tasks, stronger coding performance in benchmarks and real-world tools (such as Claude Code, Cline, Roo Code, and Kilo Code), improved reasoning with tool use during inference, more capable and efficient agent integration, and refined writing that better matches human style, readability, and natural role-play scenarios.",
 	},
+	// kilocode_change start
 	"zai-org/GLM-4.5-turbo": {
 		maxTokens: 32768,
 		contextWindow: 131072,
@@ -337,6 +339,17 @@ export const chutesModels = {
 		inputPrice: 1,
 		outputPrice: 3,
 		description: "GLM-4.5-turbo model with 128K token context window, optimized for fast inference.",
+	},
+	// kilocode_change end
+	"zai-org/GLM-4.6-turbo": {
+		maxTokens: 32768,
+		contextWindow: 202752,
+		supportsImages: false,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description:
+			"GLM-4.6 introduces major upgrades over GLM-4.5, including a longer 200K-token context window for complex tasks, stronger coding performance in benchmarks and real-world tools (such as Claude Code, Cline, Roo Code, and Kilo Code), improved reasoning with tool use during inference, more capable and efficient agent integration, and refined writing that better matches human style, readability, and natural role-play scenarios.",
 	},
 	"zai-org/GLM-4.5V": {
 		maxTokens: 32768,
